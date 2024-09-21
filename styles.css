@@ -13,7 +13,6 @@ body {
 
 h1 {
     color: #ff6f61;
-    /* Un color rosa coral atractivo */
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: 600;
@@ -52,17 +51,6 @@ h1 {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.image-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-.image-item:hover img {
-    transform: scale(1.1);
-    opacity: 0.9;
 }
 
 .image-info {
@@ -99,15 +87,6 @@ h1 {
     max-width: 100%;
     max-height: 60vh;
     border-radius: 12px;
-    object-fit: cover;
-}
-
-.overlay p {
-    margin-top: 15px;
-    font-size: 20px;
-    color: #333;
-    line-height: 1.5;
-    font-weight: 400;
 }
 
 .close {
@@ -118,17 +97,39 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     color: #ff6f61;
-    /* Color rosa coral para el botón de cierre */
 }
 
 .close:hover {
     color: #ff4d4d;
 }
 
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 20px; /* Botón ovalado */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4d4d;
+}
+
+.overlay p {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #333;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
 .overlay .price {
     margin-top: 15px;
     font-size: 18px;
     color: #ff6f61;
-    /* Color rosa coral para el precio */
     font-weight: bold;
 }
