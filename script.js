@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = document.getElementById('close');
     const shareBtn = document.getElementById('shareBtn');
     const searchInput = document.getElementById('search');
+    const additionalInfoInput = document.getElementById('additionalInfo'); // Campo adicional
 
     let items = [];
 
@@ -83,7 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Funcionalidad para compartir por WhatsApp
     shareBtn.addEventListener('click', () => {
         const productDetails = overlayText.innerText;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(productDetails)}`;
+        const additionalInfo = additionalInfoInput.value; // Obtener el dato adicional
+        const combinedDetails = `${productDetails}\n\nInformación adicional: ${additionalInfo}`;
+        const phoneNumber = '1158271923'; // Tu número de contacto
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(combinedDetails)}`;
         window.open(whatsappUrl, '_blank');
     });
 });
