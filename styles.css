@@ -2,7 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #ffe6f2; /* Fondo rosa suave */
     color: #333;
 }
 
@@ -12,16 +12,17 @@ body {
 }
 
 h1 {
-    color: #ff6f61;
+    color: #ff4d4d; /* Un rosa más intenso */
     margin-bottom: 20px;
     font-size: 2.5em;
     font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
 }
 
 #search {
     padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #ff6f61;
+    border: 2px solid #ff4d4d; /* Rosa más intenso */
     border-radius: 5px;
     font-size: 16px;
     width: 80%;
@@ -42,7 +43,7 @@ h1 {
     height: 250px;
     overflow: hidden;
     border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -56,7 +57,8 @@ h1 {
 .image-info {
     margin-top: 10px;
     font-size: 16px;
-    color: #555;
+    color: #555; /* Color de texto oscuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 .overlay {
@@ -79,7 +81,7 @@ h1 {
     background: #fff;
     border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
     text-align: center;
 }
 
@@ -96,27 +98,29 @@ h1 {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    color: #ff6f61;
+    color: #ff4d4d; /* Rosa más intenso */
 }
 
 .close:hover {
-    color: #ff4d4d;
+    color: #ff1a1a; /* Rosa más brillante en hover */
 }
 
 button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #ff6f61;
+    background-color: #ff4d4d; /* Rosa más intenso */
     color: white;
     border: none;
     border-radius: 20px; /* Botón ovalado */
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra del botón */
 }
 
 button:hover {
-    background-color: #ff4d4d;
+    background-color: #ff1a1a; /* Rosa más brillante en hover */
+    transform: translateY(-2px); /* Efecto de elevación en hover */
 }
 
 .overlay p {
@@ -130,6 +134,7 @@ button:hover {
 .overlay .price {
     margin-top: 15px;
     font-size: 18px;
-    color: #ff6f61;
+    color: #ff4d4d; /* Rosa más intenso para el precio */
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
