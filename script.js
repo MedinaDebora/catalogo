@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const overlayImg = document.getElementById('overlay-img');
     const overlayText = document.getElementById('overlay-text');
     const closeBtn = document.getElementById('close');
+    const shareBtn = document.getElementById('shareBtn');
     const searchInput = document.getElementById('search');
 
     let items = [];
@@ -23,12 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     img.src = imageUrl;
                     img.alt = name;
 
-                    // Create element for name and price
                     const info = document.createElement('div');
                     info.className = 'image-info';
                     info.innerHTML = `<strong>${name}</strong><br>${details}<br><span class="price">${price ? `Precio: ${price}` : ''}</span>`;
 
-                    // Append details and image to div
                     div.appendChild(img);
                     div.appendChild(info);
 
@@ -53,12 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     img.src = item.imageUrl;
                     img.alt = item.name;
 
-                    // Create element for name and price
                     const info = document.createElement('div');
                     info.className = 'image-info';
                     info.innerHTML = `<strong>${item.name}</strong><br>${item.details}<br><span class="price">${item.price ? `Precio: ${item.price}` : ''}</span>`;
 
-                    // Append details and image to div
                     div.appendChild(img);
                     div.appendChild(info);
 
@@ -81,5 +78,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.target === overlay) {
             overlay.style.display = 'none';
         }
+    });
+
+    // Funcionalidad para compartir por WhatsApp
+    shareBtn.addEventListener('click', () => {
+        const productDetails = overlayText.innerText;
+        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(productDetails)}`;
+        window.open(whatsappUrl, '_blank');
     });
 });
