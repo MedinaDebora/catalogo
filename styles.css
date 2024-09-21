@@ -1,66 +1,87 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Estilos generales */
+* {
     margin: 0;
     padding: 0;
-    background-color: #ffe6f2; /* Fondo rosa suave */
-    color: #333;
+    box-sizing: border-box;
 }
 
-.container {
-    text-align: center;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe6f2;
+    /* Fondo rosa suave */
+    color: #333;
     padding: 20px;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 h1 {
-    color: #ff4d4d; /* Un rosa más intenso */
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    color: #ff4081;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-#search {
+input[type="text"] {
     padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #ff4d4d; /* Rosa más intenso */
-    border-radius: 5px;
     font-size: 16px;
-    width: 80%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 500px;
+    margin: 10px auto;
+    display: block;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    outline: none;
 }
 
+input[type="text"]::placeholder {
+    color: #ff4081;
+}
+
+/* Estilos de la galería */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
 }
 
 .image-item {
-    position: relative;
-    display: inline-block;
-    width: 250px;
-    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .image-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+    height: auto;
+    border-bottom: 2px solid #ff4081;
+}
+
+.image-item:hover {
+    transform: translateY(-5px);
 }
 
 .image-info {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #555; /* Color de texto oscuro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    padding: 10px;
+    text-align: center;
 }
 
+.image-info strong {
+    display: block;
+    font-size: 1.1em;
+    color: #ff4081;
+}
+
+.price {
+    color: #ff4081;
+    font-weight: bold;
+}
+
+/* Estilos del overlay */
 .overlay {
     display: none;
     position: fixed;
@@ -68,73 +89,80 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
 .overlay-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 80%;
-    background: #fff;
-    border-radius: 12px;
+    background-color: #fff;
     padding: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más fuerte */
+    border-radius: 10px;
     text-align: center;
+    max-width: 90%;
+    width: 400px;
+    position: relative;
 }
 
-.overlay img {
-    max-width: 100%;
-    max-height: 60vh;
-    border-radius: 12px;
-}
-
-.close {
+#close {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 24px;
+    color: #ff4081;
     cursor: pointer;
-    color: #ff4d4d; /* Rosa más intenso */
 }
 
-.close:hover {
-    color: #ff1a1a; /* Rosa más brillante en hover */
+#overlay-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-button {
-    margin-top: 15px;
+#overlay-text p {
+    margin: 10px 0;
+}
+
+#additionalInfo {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ff4081;
+    border-radius: 5px;
+    outline: none;
+}
+
+#shareBtn {
+    background-color: #ff4081;
+    color: #fff;
     padding: 10px 20px;
-    background-color: #ff4d4d; /* Rosa más intenso */
-    color: white;
     border: none;
-    border-radius: 20px; /* Botón ovalado */
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra del botón */
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #ff1a1a; /* Rosa más brillante en hover */
-    transform: translateY(-2px); /* Efecto de elevación en hover */
+#shareBtn:hover {
+    background-color: #e6005c;
 }
 
-.overlay p {
-    margin-top: 15px;
-    font-size: 20px;
-    color: #333;
-    line-height: 1.5;
-    font-weight: 400;
-}
+/* Optimización para dispositivos móviles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
 
-.overlay .price {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #ff4d4d; /* Rosa más intenso para el precio */
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .overlay-content {
+        width: 95%;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
 }
